@@ -12,10 +12,11 @@ namespace Lab2
             Console.OutputEncoding = Encoding.UTF8;
             Console.WriteLine("Лабораторная работа №2. Вариант 5.");
 
+            int choice;
             while (true)
             {
                 PrintMenu();
-                var choice = ReadMenuChoice();
+                choice = ReadMenuChoice();
                 if (choice == 0)
                 {
                     return;
@@ -64,16 +65,18 @@ namespace Lab2
 
         private static int ReadMenuChoice()
         {
+            string? input;
+            int choice;
             while (true)
             {
                 Console.Write("Выберите пункт: ");
-                var input = Console.ReadLine();
+                input = Console.ReadLine();
                 if (input == null)
                 {
                     return 0;
                 }
 
-                if (int.TryParse(input, CultureInfo.InvariantCulture, out var choice)
+                if (int.TryParse(input, CultureInfo.InvariantCulture, out choice)
                     && choice >= 0 && choice <= 6)
                 {
                     return choice;

@@ -111,9 +111,10 @@ namespace Lab2
 
         private static long GreatestCommonDivisor(long first, long second)
         {
+            long remainder;
             while (second != 0)
             {
-                var remainder = first % second;
+                remainder = first % second;
                 first = second;
                 second = remainder;
             }
